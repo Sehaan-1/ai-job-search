@@ -4,6 +4,22 @@ framework_version: 1.4.5
 
 # CV Templates and Tailoring Guide
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `classic-serif`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/classic-serif/template.tex` — use this as the structural reference instead of the stock template
+> - **Manifest:** `templates/cv/classic-serif/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Source extension:** `.tex`
+> - **Compile command:** `rm -f <file>.pdf && mkdir -p build && lualatex -interaction=nonstopmode -output-directory=build <file>.tex && mv build/<file>.pdf ./` (not the command named in the stock guidance below — `/apply`'s compile step must use this instead). Run it from the output directory. If it redirects to `build/`, the log is in `build/`, and `/apply`'s Step 5e cleanup must delete that `build/` folder too. Run twice: hyperref needs a second pass.
+> - **Fonts:** TeX default serif (Latin Modern) — no bundled font files, no external font dependency
+> - **Page limit:** exactly 1 page (not the stock 2)
+> - **Output file:** `cv/main_<company>_<role>.tex`; copy any class/package/font files the template needs into the output directory, or reference them by relative path
+> - **Section order is fixed and education-first:** Education → Work Experience → Projects → Achievements and Profile Links → Technical and Non-Technical Skills. Do not add a summary/profile-statement section.
+> - **Every bullet needs a number** (throughput, latency, scale, coverage, time saved). Cut bullets that have none rather than loosening the page geometry.
+<!-- END ACTIVE-TEMPLATE -->
+
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 ## Template: LaTeX moderncv (Banking Style)
